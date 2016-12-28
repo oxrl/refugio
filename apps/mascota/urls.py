@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from apps.mascota.views import index,mascota_view,mascota_list,mascota_edit,mascota_delete,MascotaList,MascotaCreate,MascotaUpdate,MascotaDelete
+from apps.mascota.views import index,listadousuarios,mascota_view,mascota_list,mascota_edit,mascota_delete,MascotaList,MascotaCreate,MascotaUpdate,MascotaDelete
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     #url(r'^eliminar/(?P<id_mascota>\d+)/$', mascota_delete, name='mascota_eliminar'),
     url(r'^eliminar/(?P<pk>\d+)/$', login_required(MascotaDelete.as_view()), name='mascota_eliminar'),
 
+    url(r'^listado', listadousuarios, name="listado"),
 ]
